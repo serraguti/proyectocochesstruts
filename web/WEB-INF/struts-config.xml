@@ -15,6 +15,10 @@
             <form-property name="conductor" type="java.lang.String"/>
             <form-property name="imagen" type="java.lang.String"/>
         </form-bean>
+        <form-bean name="FormSearch"
+                   type="org.apache.struts.action.DynaActionForm">
+            <form-property name="search" type="java.lang.String"/>
+        </form-bean>
     </form-beans>
     
     <global-exceptions>
@@ -22,6 +26,7 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="webcochesmarca" path="/webcochesmarca.jsp"/>
         <forward name="welcome"  path="/Welcome.do"/>
         <forward name="webcoches" path="/webcoches.jsp"/>
         <forward name="webinsertarcoche" path="/webinsertarcoche.jsp"/>
@@ -30,6 +35,9 @@
     </global-forwards>
 
     <action-mappings>
+        <action path="/ActionBuscarCoches" 
+                type="controllers.ActionBuscarCoches"
+                name="FormSearch"/>
         <action path="/ActionEliminarCoche" type="controllers.ActionEliminarCoche"/>
         <action path="/ActionModificarCoche" type="controllers.ActionModificarCoche"
                 name="FormCoche"/>
